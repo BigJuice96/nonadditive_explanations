@@ -1,5 +1,3 @@
-import os
-os.chdir('/Users/abdallah/Desktop/Kings College Project/Code/GIT_Repo')
 import numpy as np
 import pandas as pd
 from sklearn.model_selection import ShuffleSplit, GridSearchCV
@@ -9,10 +7,10 @@ from sklearn.preprocessing import normalize
 import math
 from sksurv.metrics import concordance_index_censored
 from itertools import chain, combinations
-from random import sample
-from sklearn.kernel_approximation import Nystroem
 import seaborn as sns
 from sklearn import set_config
+# from sklearn.kernel_approximation import Nystroem
+
 
 def data_transformation(X, q_additivity=None, pow_set = None):
     n, d = X.shape

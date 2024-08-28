@@ -1,5 +1,3 @@
-import os
-os.chdir('/Users/abdallah/Desktop/Kings College Project/Code/GIT_Repo')
 import surv_utils
 from nonadditive_explainers import nonadditive_explainer
 import pandas as pd
@@ -25,29 +23,37 @@ class ExplainSurvival:
         self.time_stamps = model.predict_survival_function(x.iloc[:10,:])[0].x # also works if model.unique_times_ is deprecated
         self.x, self.y = x, y
 
-    def global_feature_importance(self, n_repeats=15):
+    def global_feature_importance(self, method = "pfi", n_repeats=15):
         """
         Gives the permutation feature importance (global) for the given model.
         View  sklearn.inspection.permutation_importance for more documentation.
         """
-        pfi = permutation_importance(self.model, self.x, self.y, n_repeats=n_repeats, random_state=20)
-        pfi_rankings = pd.DataFrame(
-            {k: pfi[k]
-                for k in (
-                    "importances_mean",
-                    "importances_std",
-                )
-            },
-            index=self.x.columns,
-        ).sort_values(by="importances_mean", ascending=False)
-        pfi_rankings["feature"] = pfi_rankings.index
-#            pfi_rankings = pfi_rankings.drop(["APOEe4_No","APOEe4_Apoe present"],axis=0).iloc[:15,:]
-        pfi_rankings.index = range(len(pfi_rankings.index))
-        pfi_rankings.columns = ["feature_importance", "importances_std", "feature"]
-        self.pfi_rankings = pfi_rankings
-        print("Predictors that can be readily assessed for selection (ordered by importance): \n\n", pfi_rankings["feature"])
-        print("Please select the predictors that you would like to assess create a new ExplainSurvival object by passing the feature labels as a list to the feature_selection argument.")
-        return pfi_rankings
+        if method == "pfi":
+            pfi = permutation_importance(self.model, self.x, self.y, n_repeats=n_repeats, random_state=20)
+            pfi_rankings = pd.DataFrame(
+                {k: pfi[k]
+                    for k in (
+                        "importances_mean",
+                        "importances_std",
+                    )
+                },
+                index=self.x.columns,
+            ).sort_values(by="importances_mean", ascending=False)
+            pfi_rankings["feature"] = pfi_rankings.index
+    #            pfi_rankings = pfi_rankings.drop(["APOEe4_No","APOEe4_Apoe present"],axis=0).iloc[:15,:]
+            pfi_rankings.index = range(len(pfi_rankings.index))
+            pfi_rankings.columns = ["feature_importance", "importances_std", "feature"]
+            self.pfi_rankings = pfi_rankings
+            print("Predictors that can be readily assessed for selection (ordered by importance): \n\n", pfi_rankings["feature"])
+            print("Please select the predictors that you would like to assess create a new ExplainSurvival object by passing the feature labels as a list to the feature_selection argument.")
+            return pfi_rankings
+        elif method == "SurvMLeX":
+            global_importance = nonadditive_explainer(self.x, self.y, method = "SurvMLeX", alpha=0.1, finetune=True, rank_ratio=1.0, fit_intercept=False, n_shuffle_splits=5, random_state=1, range_alpha= (2.0 ** np.arange(-8, 7, 2)))
+            return global_importance
+        elif method == "SurvChoquEx":
+            global_importance = nonadditive_explainer(self.x, self.y, method = "SurvChoquEx", alpha=0.1, finetune=True, rank_ratio=1.0, fit_intercept=False, n_shuffle_splits=5, random_state=1, range_alpha= (2.0 ** np.arange(-8, 7, 2)))
+            return global_importance
+       
 
     def explain_instance(self, 
                         instance, # Pass instance as a np.array or pd.series                         
@@ -126,13 +132,11 @@ class ExplainSurvival:
             try:
                 explanation = surv_utils.train_cox_and_explain(k_features ,scaled_data, y_lasso, model_predicted_curves, self.time_stamps,
                                         False, alpha_min_ratio=alpha_min_ratio, plot_curve=False)
-                print("1a")
             except: 
                 explanation = {"hazard_ratios":np.nan, "survival_curve_bb": np.nan, "timestamps_bb":np.nan, 
                                             "survival_curve_cox":np.nan, "timestamps_cox":np.nan,"explanation_text":np.nan,
                                             "fidelity":np.nan, "interpretable_model":np.nan, "shapley_values":np.nan }
                 print("SurvLIME could not converge: try again")
-                print("1b")
                 return explanation
             shapley_values = None
             # Save important objects
@@ -149,7 +153,6 @@ class ExplainSurvival:
             # Add interactions 
         scaled_data = surv_utils.add_all_interactions_to_df(scaled_data, order=order_of_interactions)
             # Fit a penalised cox model 
-        print("1.5")
         try:
             explanation = surv_utils.train_cox_and_explain(len(list(scaled_data.columns)) , # I.e., retain all features in scaled data (which is k_features + interactions)
                                     scaled_data, 
@@ -160,14 +163,11 @@ class ExplainSurvival:
                                     alpha_min_ratio=alpha_min_ratio,
                                     plot_curve=plot_curve
                                     )
-            print("2a")
         except: 
             print("Local surrogate model (penalised Cox) could not converge to a solution (2).")
             explanation = {"hazard_ratios":np.nan, "survival_curve_bb": np.nan, "timestamps_bb":np.nan, 
                                         "survival_curve_cox":np.nan, "timestamps_cox":np.nan,"explanation_text":np.nan,
                                         "fidelity":np.nan, "interpretable_model":np.nan, "shapley_values":np.nan    }
-            print("2b")
-
             # Update scaled data and explanation objects in memory
         self.scaled_data, explanation["shapley_values"] = scaled_data, shapley_values
         return explanation

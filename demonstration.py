@@ -1,5 +1,5 @@
-import os 
-os.chdir('/Users/abdallah/Desktop/Kings College Project/Code/GIT_Repo')
+# This is a small demonstration of the explainer. 
+# Make sure to first install the dependencies under requirements.txt using pip or to use environment.yml to recreate the used conda environment with its dependencies. 
 from explainer import ExplainSurvival
 from sksurv.datasets import load_veterans_lung_cancer
 from sksurv.preprocessing import OneHotEncoder
@@ -32,7 +32,7 @@ explainer = ExplainSurvival(
     # Explain an instance using any of the four methods "SurvMLeX", "SurvChoquEx", "SurvLIME" or "SurvSHAP"
 explanation = explainer.explain_instance( 
                         instance = i , # Pass instance as a np.array or pd.series                         
-                        method = "SurvLIME", # Explanation method: either "SurvMLeX", "SurvChoquEx", "SurvLIME" or "SurvSHAP"
+                        method = "SurvMLeX", # Explanation method: either "SurvMLeX", "SurvChoquEx", "SurvLIME" or "SurvSHAP"
                         binary=False, # Using a binary representation for the perturbed samples. Default is False
                         aggregation_method = "percentile", # How to aggregate survival function predictions to a time-to-event estimate: "trapezoid", "median" or "percentile"
                         threshold_aggregation = 0.5, # Which threshold to use when aggregating survival curves to a time-to-event estimate using the percentile method (if it is not finetuned)
@@ -54,11 +54,9 @@ explanation["explanation_text"]
 
     # You can also get a global measure of feature importance using SurvMLeX or SurvChoquEx
     # Simply apply the methods on the entire dataset
-from nonadditive_explainers import nonadditive_explainer
-import numpy as np
-global_importance = nonadditive_explainer(data_x, data_y, method = "SurvMLeX", alpha=0.1, finetune=True, rank_ratio=1.0, fit_intercept=False, n_shuffle_splits=5, random_state=1, range_alpha= (2.0 ** np.arange(-8, 7, 2)))
-
-
-    # TODO maybe also show how to apply it to different packages besides sklearn
+global_importance_mlex = explainer.global_feature_importance(method = "SurvMLeX")
+print(global_importance_mlex)
+global_importance_choquex = explainer.global_feature_importance(method = "SurvChoquEx")
+print(global_importance_choquex)
 
 

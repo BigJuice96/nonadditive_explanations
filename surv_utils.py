@@ -2,24 +2,19 @@ import pandas as pd
 import numpy as np
 from numpy.lib import recfunctions as rfn
 from scipy.integrate import trapezoid
-from statsmodels.stats.outliers_influence import variance_inflation_factor
 import matplotlib.pyplot as plt
 from functools import partial
 import sklearn
-from imblearn.over_sampling import SMOTENC
-import smote_variants as sv 
 from sklearn.ensemble import RandomForestClassifier
 from sklearn import metrics
 from sklearn.model_selection import train_test_split
-import lime
-import scipy.stats as ss
 from sksurv.linear_model import CoxnetSurvivalAnalysis
 import os
 from lime import lime_tabular
 import itertools
-import math
-
-
+# from statsmodels.stats.outliers_influence import variance_inflation_factor
+# import smote_variants as sv 
+# from imblearn.over_sampling import SMOTENC
 
 
 
@@ -60,77 +55,77 @@ def merge_dataframes(dataframes, on, remove_duplicate_columns = True):
 
 
 
-def balance_data_smotenc(df, y, cat_features):
-    """
-    df will not include target (train_x).
-    y will be the target (0,1) , so train["dem_hse_w8"]
-    Rounds features that are supposed to be discrete.
-    Applies SMOTENC to df.
-    cat_features will be a list of the names of the categorical features
-    """
-    cat_boolean = []
-    for feature in list(df.columns):
-        if feature in cat_features:
-            cat_boolean.append(True)
-        else:
-            cat_boolean.append(False)  
-    smote_nc = SMOTENC(categorical_features=cat_boolean, random_state=0)
-    new_df, new_y = smote_nc.fit_resample(df, y)
+# def balance_data_smotenc(df, y, cat_features):
+#     """
+#     df will not include target (train_x).
+#     y will be the target (0,1) , so train["dem_hse_w8"]
+#     Rounds features that are supposed to be discrete.
+#     Applies SMOTENC to df.
+#     cat_features will be a list of the names of the categorical features
+#     """
+#     cat_boolean = []
+#     for feature in list(df.columns):
+#         if feature in cat_features:
+#             cat_boolean.append(True)
+#         else:
+#             cat_boolean.append(False)  
+#     smote_nc = SMOTENC(categorical_features=cat_boolean, random_state=0)
+#     new_df, new_y = smote_nc.fit_resample(df, y)
 
-    for feature in df.columns:
-        if not any(df[feature] - np.round(df[feature],0) > 0):  # Rounds values up to create discrete values if original feature was discrete
-            new_df[feature] = np.round(new_df[feature],0)
-    return new_df, new_y
+#     for feature in df.columns:
+#         if not any(df[feature] - np.round(df[feature],0) > 0):  # Rounds values up to create discrete values if original feature was discrete
+#             new_df[feature] = np.round(new_df[feature],0)
+#     return new_df, new_y
 
 
-def balance_dataset(dataframe , class_feature, categorical_features, balancer = sv.Safe_Level_SMOTE()):
-    """
-    Pass it the training data with all variables included (also the targets).
-    Will conduct oversampling to generate synthetic data and balance out the df.
-    Will then round categorical and discrete features so that the new instances are in line.
-    For SMOTENC:
-        df will not include target (train_x).
-        y will be the target (0,1) , so train["dem_hse_w8"]
-        Rounds features that are supposed to be discrete.
-        Applies SMOTENC to df.
-        cat_features will be a list of the names of the categorical features
-    """
-    if balancer == "SMOTENC":
-        df = dataframe.drop(class_feature, axis=1)
-        cat_boolean = []
-        for feature in list(df.columns):
-            if feature in categorical_features:
-                cat_boolean.append(True)
-            else:
-                cat_boolean.append(False)  
-        smote_nc = SMOTENC(categorical_features=cat_boolean, random_state=0)
-        new_df, new_y = smote_nc.fit_resample(df, dataframe[class_feature])
+# def balance_dataset(dataframe , class_feature, categorical_features, balancer = sv.Safe_Level_SMOTE()):
+#     """
+#     Pass it the training data with all variables included (also the targets).
+#     Will conduct oversampling to generate synthetic data and balance out the df.
+#     Will then round categorical and discrete features so that the new instances are in line.
+#     For SMOTENC:
+#         df will not include target (train_x).
+#         y will be the target (0,1) , so train["dem_hse_w8"]
+#         Rounds features that are supposed to be discrete.
+#         Applies SMOTENC to df.
+#         cat_features will be a list of the names of the categorical features
+#     """
+#     if balancer == "SMOTENC":
+#         df = dataframe.drop(class_feature, axis=1)
+#         cat_boolean = []
+#         for feature in list(df.columns):
+#             if feature in categorical_features:
+#                 cat_boolean.append(True)
+#             else:
+#                 cat_boolean.append(False)  
+#         smote_nc = SMOTENC(categorical_features=cat_boolean, random_state=0)
+#         new_df, new_y = smote_nc.fit_resample(df, dataframe[class_feature])
 
-        for feature in df.columns:
-            if not any(df[feature] - np.round(df[feature],0) > 0):  # Rounds values up to create discrete values if original feature was discrete
-                new_df[feature] = np.round(new_df[feature],0)
+#         for feature in df.columns:
+#             if not any(df[feature] - np.round(df[feature],0) > 0):  # Rounds values up to create discrete values if original feature was discrete
+#                 new_df[feature] = np.round(new_df[feature],0)
         
-        new_df[class_feature] = np.array(new_y)
-        return new_df
+#         new_df[class_feature] = np.array(new_y)
+#         return new_df
 
-    X = np.array(dataframe)
-    y = np.array(dataframe[class_feature])
-    oversampler = balancer
+#     X = np.array(dataframe)
+#     y = np.array(dataframe[class_feature])
+#     oversampler = balancer
 
-    # X_samp and y_samp contain the oversampled dataset
-    X_samp, y_samp= oversampler.sample(X, y)
-    dataframe = pd.DataFrame(X_samp, columns=list(dataframe.columns))
-    dataframe[class_feature] = y_samp
+#     # X_samp and y_samp contain the oversampled dataset
+#     X_samp, y_samp= oversampler.sample(X, y)
+#     dataframe = pd.DataFrame(X_samp, columns=list(dataframe.columns))
+#     dataframe[class_feature] = y_samp
 
-    # Have to round features that are categorical/discrete
-    non_cat_features = [x for x in list(dataframe.columns) if x not in  categorical_features]
-    discrete_feature_indices = [2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,20,21] # I checked for those manually...
-    for feature in dataframe.columns:
-        if feature in categorical_features:
-            dataframe[feature] = np.round(dataframe[feature],0)
-        elif feature in [non_cat_features[x] for x in discrete_feature_indices]:
-            dataframe[feature] = np.round(dataframe[feature],0)
-    return dataframe
+#     # Have to round features that are categorical/discrete
+#     non_cat_features = [x for x in list(dataframe.columns) if x not in  categorical_features]
+#     discrete_feature_indices = [2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,20,21] # I checked for those manually...
+#     for feature in dataframe.columns:
+#         if feature in categorical_features:
+#             dataframe[feature] = np.round(dataframe[feature],0)
+#         elif feature in [non_cat_features[x] for x in discrete_feature_indices]:
+#             dataframe[feature] = np.round(dataframe[feature],0)
+#     return dataframe
 
 
 
@@ -369,8 +364,6 @@ def calibration_rf_clf(train):
     return score
 
 
-
-
 def calculate_fidelity(event_times1, event_times2, curve1, curve2, new_curve_shape = (18,)):
     if len(event_times1) == len(event_times2):
         if all(event_times1 == event_times2):
@@ -464,17 +457,18 @@ def calculate_weights(df_train, df_pert, kernel_multiplyer = 0.75):
     return weights
 
 
-def find_high_VIF(df):    # TODO Modify function to do this recursively and print dropped features
-    """
-    Returns variables with a high VIF.
-    """
-    vif_data = pd.DataFrame()
-    vif_data["feature"] = df.columns
-    vif_data["VIF"] = [variance_inflation_factor(df.values, i)
-                            for i in range(len(df.columns))]
-    high_VIF_features = list(vif_data.loc[vif_data["VIF"] > 5,:]["feature"])
-    print(vif_data)
-    return high_VIF_features, vif_data
+# def find_high_VIF(df):    
+#     """
+#     Should adapt this to do it recursively and drop features until VIF is right.
+#     Returns variables with a high VIF.
+#     """
+#     vif_data = pd.DataFrame()
+#     vif_data["feature"] = df.columns
+#     vif_data["VIF"] = [variance_inflation_factor(df.values, i)
+#                             for i in range(len(df.columns))]
+#     high_VIF_features = list(vif_data.loc[vif_data["VIF"] > 5,:]["feature"])
+#     print(vif_data)
+#     return high_VIF_features, vif_data
 
 
 # def generate_pert_data(df, n_samples, categ_features, instance_index):
@@ -497,7 +491,7 @@ def find_high_VIF(df):    # TODO Modify function to do this recursively and prin
 def create_weighted_perturbed_data(data, 
                                    instance, 
                                    categorical_features, 
-                                   binary=True, 
+                                   binary=False, 
                                    lime_kernel=0.75,
                                    weigh_data=True,
                                    n=1000,
@@ -779,3 +773,4 @@ def convert_data_for_plot(original_df):
     new_df = pd.DataFrame(d)
     new_df.index = np.arange(1,26)
     return new_df
+
