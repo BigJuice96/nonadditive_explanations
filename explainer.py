@@ -3,7 +3,7 @@ from nonadditive_explainers import nonadditive_explainer
 import pandas as pd
 import numpy as np
 from sklearn.inspection import permutation_importance
-from survshap.survshap import SurvivalModelExplainer, PredictSurvSHAP
+from survshap import SurvivalModelExplainer, PredictSurvSHAP
 
 
 class ExplainSurvival:

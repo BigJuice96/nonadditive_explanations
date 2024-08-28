@@ -32,7 +32,7 @@ explainer = ExplainSurvival(
     # Explain an instance using any of the four methods "SurvMLeX", "SurvChoquEx", "SurvLIME" or "SurvSHAP"
 explanation = explainer.explain_instance( 
                         instance = i , # Pass instance as a np.array or pd.series                         
-                        method = "SurvMLeX", # Explanation method: either "SurvMLeX", "SurvChoquEx", "SurvLIME" or "SurvSHAP"
+                        method = "SurvSHAP", # Explanation method: either "SurvMLeX", "SurvChoquEx", "SurvLIME" or "SurvSHAP"
                         binary=False, # Using a binary representation for the perturbed samples. Default is False
                         aggregation_method = "percentile", # How to aggregate survival function predictions to a time-to-event estimate: "trapezoid", "median" or "percentile"
                         threshold_aggregation = 0.5, # Which threshold to use when aggregating survival curves to a time-to-event estimate using the percentile method (if it is not finetuned)
@@ -47,6 +47,10 @@ explanation = explainer.explain_instance(
                         alpha=1.0, # Alpha parameter of SurvMLeX or SurvChoquEx
                         survshap_calculation_method="sampling" # for survshap method: can be either "kernel", "sampling", "treeshap" or "shap_kernel"
                         )
+
+
+
+
 
     # retrieve the shapley values and other useful data from the explanation object
 explanation["shapley_values"] 
