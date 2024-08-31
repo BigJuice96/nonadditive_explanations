@@ -1,8 +1,12 @@
-import os
 import pandas as pd
 import numpy as np
-os.chdir('/Users/abdallah/Desktop/Kings College Project/Code/GIT_Repo')
-from explainer import ExplainSurvival
+
+os.chdir("experiments")
+
+os.getcwd()
+
+from ..explainer import ExplainSurvival
+
 from survshap.survshap import *
 import matplotlib.pyplot as plt
 from survshap.survshap.predict_explanations import *
