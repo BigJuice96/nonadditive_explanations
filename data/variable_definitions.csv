@@ -1,0 +1,181 @@
+,Variables,Definitions
+0,heeye,Is your eyesight (using glasses or corrective lens as usual) ... ?
+1,hefrnd,"How good is your eyesight for seeing things at a distance, like recognising a fr"
+2,hepap,"How good is your eyesight for seeing things up close, like reading ordinary news"
+3,hecat,Have you ever had cataract surgery?
+4,psceda,"Much of the time during the past week, have you felt depressed?"
+5,pscedb,"Much of the time during the past week, have you felt that everything you did was"
+6,pscedc,"Much of the time during the past week, has your sleep been restless?"
+7,pscedd,"Much of the time during the past week, were you happy?"
+8,pscede," Much of the time during the past week, have you felt lonely?"
+9,pscedf," Much of the time during the past week, have you enjoyed life?"
+10,pscedg,"Much of the time during the past week, have you felt sad?"
+11,pscedh,"Much of the time during the past week, could you not get going?"
+12,scghqa, have you recently been able to concentrate on whatever you're doing?
+13,scghqb,Have you recently lost much sleep over worry?
+14,scghqc,Have you recently felt you were playing a useful part in things
+15,scghqd, Have you recently felt capable of making decisions
+16,scghqe,Have you recently felt constantly under strain
+17,scghqf,Have you recently felt you couldn't overcome your difficulties
+18,scghqg,Have you recently been able to enjoy your normal day-to-day activities
+19,scghqh,Have you recently been able to face up to your problems
+20,scghqi, Have you recently been feeling unhappy and depressed
+21,scghqj,Have you recently been losing confidence in yourself
+22,scghqk,Have you recently been thinking of yourself as a worthless person
+23,scghql,"Have you recently been feeling reasonably happy, all things considered"
+24,hebal,How often do you have problems with keeping your balance when you are walking on
+25,hediz,How often do you have problems with dizziness when you are walking on a level su
+26,hepain,Are you often troubled with pain?
+27,hepaa,How bad is the pain most of the time? Is it   ?
+28,hebck,How would you rate the pain) in your back? 
+29,hehip,How would you rate the pain) in your hips? 
+30,hekne,How would you rate the pain) in your knees?
+31,hefet, How would you rate the pain) in your feet? 
+32,hefla,Have you fallen down in the last two years (for any  reason)?
+33,heflb,How many times have you fallen down in the last two years?
+34,heflc,In [that fall/any of the falls] did you injure yourself seriously enough to need
+35,stroke, Have you ever experienced stroke? 
+36,diabetes,Have you ever been diagnosed with diabetes?
+37,lungc,Have you ever been diagnosed with long conditions?
+38,asthmae,Have you ever been diagnosed with asthma?
+39,arthre,Have you ever been diagnosed with arthreates?
+40,cancer,Have you ever been diagnosed with cancer?
+41,parkine,Have you ever been diagnosed with partkisons disease?
+42,hearte,Have you ever been diagnosed with heart diseases?
+43,srhhrs,How would you describe your health?
+44,lsill,Do you have a persistent and debilitating health condition?
+45,dhager,Age variable from HH grid collapsed at 90 plus
+46,gender,Gender
+47,dimar,Current marital status
+48,edqual,Highest Educational Qualification at ELSA W1
+49,hesmk,Have you ever smoked cigarettes?
+50,heska,Do you smoke cigarettes at all nowadays?
+51,scchd,do you have any children
+52,dhnch,"Number of living children (NOT resident in household): In total,"
+53,asoccls,Social Class
+54,aeconact, Economic Status
+55,aeducend,Age education ended
+56,heala,In the past 12 months have you taken an alcoholic drink  ? {frequency}.
+57,heacta,Do you take part in sports or activities that are vigorous  .? {frequency in dai
+58,heactb,Do you take part in sports or activities that are moderately energetic  .? {freq
+59,heactc,Do you take part in sports or activities that are mildly energetic .? {frequency
+60,wselfd,self reported emp status
+61,wpactive, current working status
+62,h1atotf,non-housing financial wealth
+63,s1byear,birth year
+64,r1retage, retirement age
+65,r1retemp,whether R retired
+66,scqola,My age prevents me from doing the things I would like to
+67,scqolb,I feel that what happens to me is out of my control
+68,scqolc,I feel free to plan for the future
+69,scqold,I feel left out of things
+70,scqole,I can do the things I want to do
+71,scqolf, Family responsibilities prevent me from doing what I want to do
+72,scqolg,I feel that I can please myself what I do
+73,scqolh, My health stops me from doing things I want to do
+74,scqoli,Shortage of money stops me from doing the things I want to do
+75,scqolj,I look forward to each day
+76,scqolk,I feel that my life has meaning
+77,scqoll, I enjoy the things that I do
+78,scqolm,I enjoy being in the company of others
+79,scqoln,"On balance, I look back on my life with a sense of happiness"
+80,scqolo, I feel full of energy these days
+81,scqolp,I choose to do things that I have never done before
+82,scqolq,I feel satisfied with the way my life has turned out
+83,scqolr,I feel that life is full of opportunities
+84,scqols, I feel that the future looks good to me
+85,sclddr,Where would you place yourself on this ladder
+86,scorg1,"Political party, trade union or environmental groups"
+87,scorga2," Tenants groups, resident groups, neighbourhoold watch"
+88,scorg3,Church or other religious groups
+89,scorg4,Charitable associations
+90,scorg5," Education, art or music groups or evening classes"
+91,scorg6,Social club
+92,scorg7," Sports clubs, gym, exercise classes"
+93,scorg8,"Any other organisations, club or societies"
+94,scacca, How do you find getting to the bank or cash point
+95,scaccb,How do you find getting to the Chiropodist
+96,scaccc, How do you find getting to the Dentist
+97,scaccd,How do you find getting to your General Practitioner
+98,scacce,How do you find getting to the Hospital
+99,scaccf,How do you find getting to your Local Shops
+100,scaccg,How do you find getting to the Optician
+101,scacch,How do you find getting to the Post office
+102,scacci, How do you find getting to the Shopping Centre
+103,scaccj,How do you find getting to the Supermarket
+104,scghqa,have you recently been able to concentrate on whatever you're doing?
+105,scghqb, Have you recently lost much sleep over worry?
+106,scghqc,Have you recently felt you were playing a useful part in  things
+107,scghqd, Have you recently felt capable of making decisions
+108,scghqe,Have you recently felt constantly under strain
+109,scghqf,Have you recently felt you couldn't overcome your difficulties
+110,scghqg,Have you recently been able to enjoy your normal day-to-day activities
+111,scghqh,Have you recently been able to face up to your problems
+112,scghqi,Have you recently been feeling unhappy and depressed
+113,scghqj, Have you recently been losing confidence in yourself
+114,scghqk,Have you recently been thinking of yourself as a worthless person
+115,scghql,"Have you recently been feeling reasonably happy, all things considered"
+116,scdca,in general At home I feel I have control over what happens in most situations
+117,scdcb,"in general At work, I feel I have control over what happens in most situations"
+118,scdcc, in general I feel that what happens in my life is often determined by factors b
+119,scdcd,"In general, I have different demands that I think are hard to combine"
+120,scdce,"In general, I have enough time to do everything"
+121,scdcf,"Considering the things I have to do at work, I have to work very fast"
+122,scdcg,"Considering the things I have to do at home, I have to work very fast"
+123,sclddr,Where would you place yourself on this ladder
+124,spcaa,Did you look after anyone in the past week (including your partner or other peop
+125,spcac,How many hours in the past week did you do this? 
+126,spcinb,"Would you like to go to the cinema more often but feel that, for whatever reason"
+127,sprestb," Would you like to eat out of the house more often but feel that, for whatever re"
+128,spmusb,"Would you like to visit an art gallery or museum more often but feel that, for w"
+129,spteab," Would you like to go to the theatre, a concert, or the opera more often but feel"
+130,spcar,Do you have use of a car or van when you need one (either as a passenger or driv
+131,sptraa, Do you use public transport 
+132,height,Valid Height (cm) inc unreliable measurements
+133,weight,Valid Weight (kg) - inc unreliable measurements
+134,whval,Valid Mean Waist/Hip ratio
+135,memory1,Total recall (immediate and delayed)
+136,exe1,Number of animals mentioned (fluency)
+137,procspeed1,Letter cancellation
+138,w1orientc,Wave 1 orientation raw score
+139,headldr,"difficulty dressing, including putting on shoes and socks"
+140,headlwa,difficulty walking across a room
+141,headlba,difficulty bathing or showering
+142,headlea,"difficulty eating, such as cutting up food"
+143,headlbe,difficulty getting in and out of bed
+144,headlwc,"difficulty using the toilet, including getting up or down"
+145,headlma,difficulty using map to figure out how to get around strange place
+146,headlda,recognising when in physical danger (wave 4 onwards)
+147,headlpr,difficulty preparing a hot meal
+148,headlsh,difficulty shopping for groceries
+149,headlph,difficulty making telephone calls
+150,headlco,difficulty with communication (wave 4 onwards)
+151,headlme,difficulty taking medications
+152,headlho,difficulty doing work around house and garden
+153,headlmo,"difficulty managing money, eg paying bills,keeping track expenses"
+154,hemobch,difficulty getting up from chair after sitting long periods
+155,hemobcl,difficulty climbing one flight stairs without resting
+156,hemobcs,difficulty climbing several flights stairs without resting
+157,hemobli,difficulty lifting or carrying weights over 10 pounds
+158,hemobpi,difficulty picking up 5p coin from table
+159,hemobpu,difficulty pulling or pushing large objects
+160,hemobre,difficulty reaching or extending arms above shoulder level
+161,hemobsi,difficulty sitting 2 hours
+162,hemobst,"difficulty stooping, kneeling or crouching"
+163,hemobwa,difficulty walking 100 yards
+164,age,Age of the particpants
+165,time,Time to dementia 
+166,wlth_gp,Wealth: 3 groups
+167,pses_financial,experience of financial difficluties during a childhood 
+168,ethnicity,Ethnicity 
+169,retemp,Whether retired
+170,pses_unempl,Parental employment status during childhood
+171,dem_hse_w8,demetia present by the end of follow up 
+172,parental_occup,Parental occupation during childhood
+173,APOEe4,Apoe present
+174,cfmetm,Self-rated memory
+175,pses_books,How many books each participant had during childhood
+176,death18fu,Whether died during the follow up 
+177,srh_hrs,Self rated health during adultshood
+178,child_health,Self rated health during chilhood
+179,idauniq,Unique IDs

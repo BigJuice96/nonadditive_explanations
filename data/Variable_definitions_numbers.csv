@@ -1,0 +1,181 @@
+Variables;Definitions
+heeye;Is your eyesight (using glasses or corrective lens as usual) ... ?
+hefrnd;How good is your eyesight for seeing things at a distance, like recognising a fr
+hepap;How good is your eyesight for seeing things up close, like reading ordinary news
+hecat;Have you ever had cataract surgery?
+psceda;Much of the time during the past week, have you felt depressed?
+pscedb;Much of the time during the past week, have you felt that everything you did was
+pscedc;Much of the time during the past week, has your sleep been restless?
+pscedd;Much of the time during the past week, were you happy?
+pscede; Much of the time during the past week, have you felt lonely?
+pscedf; Much of the time during the past week, have you enjoyed life?
+pscedg;Much of the time during the past week, have you felt sad?
+pscedh;Much of the time during the past week, could you not get going?
+scghqa; have you recently been able to concentrate on whatever you're doing?
+scghqb;Have you recently lost much sleep over worry?
+scghqc;Have you recently felt you were playing a useful part in things
+scghqd; Have you recently felt capable of making decisions
+scghqe;Have you recently felt constantly under strain
+scghqf;Have you recently felt you couldn't overcome your difficulties
+scghqg;Have you recently been able to enjoy your normal day-to-day activities
+scghqh;Have you recently been able to face up to your problems
+scghqi; Have you recently been feeling unhappy and depressed
+scghqj;Have you recently been losing confidence in yourself
+scghqk;Have you recently been thinking of yourself as a worthless person
+scghql;Have you recently been feeling reasonably happy, all things considered
+hebal;How often do you have problems with keeping your balance when you are walking on
+hediz;How often do you have problems with dizziness when you are walking on a level su
+hepain;Are you often troubled with pain?
+hepaa;How bad is the pain most of the time? Is it   ?
+hebck;How would you rate the pain) in your back? 
+hehip;How would you rate the pain) in your hips? 
+hekne;How would you rate the pain) in your knees?
+hefet; How would you rate the pain) in your feet? 
+hefla;Have you fallen down in the last two years (for any  reason)?
+heflb;How many times have you fallen down in the last two years?
+heflc;In [that fall/any of the falls] did you injure yourself seriously enough to need
+stroke; Have you ever experienced stroke? 
+diabetes;Have you ever been diagnosed with diabetes?
+lungc;Have you ever been diagnosed with long conditions?
+asthmae;Have you ever been diagnosed with asthma?
+arthre;Have you ever been diagnosed with arthreates?
+cancer;Have you ever been diagnosed with cancer?
+parkine;Have you ever been diagnosed with partkisons disease?
+hearte;Have you ever been diagnosed with heart diseases?
+srhhrs;How would you describe your health?
+lsill;Do you have a persistent and debilitating health condition?
+dhager;Age variable from HH grid collapsed at 90 plus
+gender;Gender
+dimar;Current marital status
+edqual;Highest Educational Qualification at ELSA W1
+hesmk;Have you ever smoked cigarettes?
+heska;Do you smoke cigarettes at all nowadays?
+scchd;do you have any children
+dhnch;Number of living children (NOT resident in household): In total,
+asoccls;Social Class
+aeconact; Economic Status
+aeducend;Age education ended
+heala;In the past 12 months have you taken an alcoholic drink  ? {frequency}.
+heacta;Do you take part in sports or activities that are vigorous  .? {frequency in dai
+heactb;Do you take part in sports or activities that are moderately energetic  .? {freq
+heactc;Do you take part in sports or activities that are mildly energetic .? {frequency
+wselfd;self reported emp status
+wpactive; current working status
+h1atotf;non-housing financial wealth
+s1byear;birth year
+r1retage; retirement age
+r1retemp;whether R retired
+scqola;My age prevents me from doing the things I would like to
+scqolb;I feel that what happens to me is out of my control
+scqolc;I feel free to plan for the future
+scqold;I feel left out of things
+scqole;I can do the things I want to do
+scqolf; Family responsibilities prevent me from doing what I want to do
+scqolg;I feel that I can please myself what I do
+scqolh; My health stops me from doing things I want to do
+scqoli;Shortage of money stops me from doing the things I want to do
+scqolj;I look forward to each day
+scqolk;I feel that my life has meaning
+scqoll; I enjoy the things that I do
+scqolm;I enjoy being in the company of others
+scqoln;On balance, I look back on my life with a sense of happiness
+scqolo; I feel full of energy these days
+scqolp;I choose to do things that I have never done before
+scqolq;I feel satisfied with the way my life has turned out
+scqolr;I feel that life is full of opportunities
+scqols; I feel that the future looks good to me
+sclddr;Where would you place yourself on this ladder
+scorg1;Political party, trade union or environmental groups
+scorga2; Tenants groups, resident groups, neighbourhoold watch
+scorg3;Church or other religious groups
+scorg4;Charitable associations
+scorg5; Education, art or music groups or evening classes
+scorg6;Social club
+scorg7; Sports clubs, gym, exercise classes
+scorg8;Any other organisations, club or societies
+scacca; How do you find getting to the bank or cash point
+scaccb;How do you find getting to the Chiropodist
+scaccc; How do you find getting to the Dentist
+scaccd;How do you find getting to your General Practitioner
+scacce;How do you find getting to the Hospital
+scaccf;How do you find getting to your Local Shops
+scaccg;How do you find getting to the Optician
+scacch;How do you find getting to the Post office
+scacci; How do you find getting to the Shopping Centre
+scaccj;How do you find getting to the Supermarket
+scghqa;have you recently been able to concentrate on whatever you're doing?
+scghqb; Have you recently lost much sleep over worry?
+scghqc;Have you recently felt you were playing a useful part in  things
+scghqd; Have you recently felt capable of making decisions
+scghqe;Have you recently felt constantly under strain
+scghqf;Have you recently felt you couldn't overcome your difficulties
+scghqg;Have you recently been able to enjoy your normal day-to-day activities
+scghqh;Have you recently been able to face up to your problems
+scghqi;Have you recently been feeling unhappy and depressed
+scghqj; Have you recently been losing confidence in yourself
+scghqk;Have you recently been thinking of yourself as a worthless person
+scghql;Have you recently been feeling reasonably happy, all things considered
+scdca;in general At home I feel I have control over what happens in most situations
+scdcb;in general At work, I feel I have control over what happens in most situations
+scdcc; in general I feel that what happens in my life is often determined by factors b
+scdcd;In general, I have different demands that I think are hard to combine
+scdce;In general, I have enough time to do everything
+scdcf;Considering the things I have to do at work, I have to work very fast
+scdcg;Considering the things I have to do at home, I have to work very fast
+sclddr;Where would you place yourself on this ladder
+spcaa;Did you look after anyone in the past week (including your partner or other peop
+spcac;How many hours in the past week did you do this? 
+spcinb;Would you like to go to the cinema more often but feel that, for whatever reason
+sprestb; Would you like to eat out of the house more often but feel that, for whatever re
+spmusb;Would you like to visit an art gallery or museum more often but feel that, for w
+spteab; Would you like to go to the theatre, a concert, or the opera more often but feel
+spcar;Do you have use of a car or van when you need one (either as a passenger or driv
+sptraa; Do you use public transport 
+height;Valid Height (cm) inc unreliable measurements
+weight;Valid Weight (kg) - inc unreliable measurements
+whval;Valid Mean Waist/Hip ratio
+memory1;Total recall (immediate and delayed)
+exe1;Number of animals mentioned (fluency)
+procspeed1;Letter cancellation
+w1orientc;Wave 1 orientation raw score
+headldr;difficulty dressing, including putting on shoes and socks
+headlwa;difficulty walking across a room
+headlba;difficulty bathing or showering
+headlea;difficulty eating, such as cutting up food
+headlbe;difficulty getting in and out of bed
+headlwc;difficulty using the toilet, including getting up or down
+headlma;difficulty using map to figure out how to get around strange place
+headlda;recognising when in physical danger (wave 4 onwards)
+headlpr;difficulty preparing a hot meal
+headlsh;difficulty shopping for groceries
+headlph;difficulty making telephone calls
+headlco;difficulty with communication (wave 4 onwards)
+headlme;difficulty taking medications
+headlho;difficulty doing work around house and garden
+headlmo;difficulty managing money, eg paying bills,keeping track expenses
+hemobch;difficulty getting up from chair after sitting long periods
+hemobcl;difficulty climbing one flight stairs without resting
+hemobcs;difficulty climbing several flights stairs without resting
+hemobli;difficulty lifting or carrying weights over 10 pounds
+hemobpi;difficulty picking up 5p coin from table
+hemobpu;difficulty pulling or pushing large objects
+hemobre;difficulty reaching or extending arms above shoulder level
+hemobsi;difficulty sitting 2 hours
+hemobst;difficulty stooping, kneeling or crouching
+hemobwa;difficulty walking 100 yards
+age;Age of the particpants
+time;Time to dementia 
+wlth_gp;Wealth: 3 groups
+pses_financial;experience of financial difficluties during a childhood 
+ethnicity;Ethnicity 
+retemp;Whether retired
+pses_unempl;Parental employment status during childhood
+dem_hse_w8;demetia present by the end of follow up 
+parental_occup;Parental occupation during childhood
+APOEe4;Apoe present
+cfmetm;Self-rated memory
+pses_books;How many books each participant had during childhood
+death18fu;Whether died during the follow up 
+srh_hrs;Self rated health during adultshood
+child_health;Self rated health during chilhood
+idauniq;Unique IDs
